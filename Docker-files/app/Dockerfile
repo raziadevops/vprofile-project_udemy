@@ -1,7 +1,9 @@
 FROM openjdk:17-jdk-slim AS BUILD_IMAGE
-RUN apt update && apt install git -y && apt install maven -y\
-    git clone https://github.com/raziadevops/vprofile-project_udemy.git\
-    cd vprofile-project_udemy && git checkout docker && mvn install
+RUN apt update \
+     apt install git -y \
+     apt install maven -y \
+     git clone https://github.com/raziadevops/vprofile-project_udemy.git \
+     cd vprofile-project_udemy && git checkout docker && mvn install
 
 
 FROM tomcat:9-jre17
